@@ -3,12 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	foods := []string{"Pizza", "Pasta", "Noodle", "Hamburger"}
-	for _, food := range foods {
-		fmt.Println(food)
-	}
-
-	fmt.Printf("%v\n", foods)
-	foods = append(foods, "French Fries")
-	fmt.Printf("%v\n", foods)
+	a := 2
+	b := &a
+	a = 10
+	fmt.Println(*b, a)
 }
