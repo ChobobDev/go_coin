@@ -1,7 +1,8 @@
-# go_coin
+# Learning the blockchain concepts with Go lang
 
 진행과정 
 
+# 3 TOUR OF GO
 |   Date   |  Section  |
 | :------: |:------:|
 |15/06/2021| #3.0 Creating the Project |
@@ -13,3 +14,8 @@
 |19/06/2021|#3.6 Structs|
 |20/06/2021|#3.7 Structs with Pointers|
 |20/06/2021|#3.8 Conclusions|
+
+# 4 BLOCKCHAIN
+|   Date   |  Section  |
+| :------: |:------:|
+|20/06/2021|#4.0 Introduction|
