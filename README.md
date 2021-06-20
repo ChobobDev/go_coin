@@ -19,3 +19,4 @@
 |   Date   |  Section  |
 | :------: |:------:|
 |20/06/2021|#4.0 Introduction|
+|20/06/2021|#4.1 Our First Block|
