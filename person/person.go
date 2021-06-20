@@ -11,3 +11,7 @@ func (p *Person) SetDetails(name string, age int, nationality string) {
 	p.age = age
 	p.nationality = nationality
 }
+
+func (p Person) Name() string {
+	return p.name
+}

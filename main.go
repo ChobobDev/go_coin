@@ -9,5 +9,5 @@ import (
 func main() {
 	bernie := person.Person{}
 	bernie.SetDetails("Bernie", 21, "Korea")
-	fmt.Println(bernie)
+	fmt.Println(bernie.Name())
 }

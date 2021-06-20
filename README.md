@@ -1,5 +1,6 @@
 # go_coin
 
+진행과정 
 
 |   Date   |  Section  |
 | :------: |:------:|
@@ -11,3 +12,4 @@
 |17/06/2021|#3.5 Pointers|
 |19/06/2021|#3.6 Structs|
 |20/06/2021|#3.7 Structs with Pointers|
+|20/06/2021|#3.8 Conclusions|
