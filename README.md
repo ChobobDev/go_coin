@@ -22,3 +22,4 @@
 |20/06/2021|#4.1 Our First Block|
 |21/06/2021|#4.2 Our First Blockchain|
 |21/06/2021|#4.3 Singleton Pattern|
+|21/06/2021|#4.4 Refactoring part One|
