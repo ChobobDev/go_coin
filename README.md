@@ -29,3 +29,4 @@
 |   Date   |  Section  |
 | :------: |:------:|
 |22/06/2021|#5.0 Setup|
+|22/06/2021|#5.1 Rendering Templates|
