@@ -8,7 +8,11 @@ import (
 	"github.com/ChobobDev/go_coin/blockchain"
 )
 
-const port string = ":4000"
+const {
+	port string = ":4000"
+	templateDir string ="/templates"
+}
+var templates *template.Template
 
 type homeData struct {
 	PageTitle string
@@ -16,7 +20,7 @@ type homeData struct {
 }
 
 func home(rw http.ResponseWriter, r *http.Request) {
-	tmpl := template.Must(template.ParseFiles("templates/home.html"))
+	templates = template.Must(template.ParseGlob())
 	data := homeData{"버니 버니 바니 바니 고랭고랭", blockchain.GetBlockchain().AllBlocks()}
 
 	tmpl.Execute(rw, data)
