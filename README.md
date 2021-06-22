@@ -2,7 +2,7 @@
 
 진행과정 
 
-# 3 TOUR OF GO
+# #3 TOUR OF GO
 |   Date   |  Section  |
 | :------: |:------:|
 |15/06/2021| #3.0 Creating the Project |
@@ -15,7 +15,7 @@
 |20/06/2021|#3.7 Structs with Pointers|
 |20/06/2021|#3.8 Conclusions|
 
-# 4 BLOCKCHAIN
+# #4 BLOCKCHAIN
 |   Date   |  Section  |
 | :------: |:------:|
 |20/06/2021|#4.0 Introduction|
@@ -25,7 +25,7 @@
 |21/06/2021|#4.4 Refactoring part One|
 |22/06/2021|#4.5 Refactoring part Two|
 
-#5 EXPLORER
+# #5 EXPLORER
 |   Date   |  Section  |
 | :------: |:------:|
 |22/06/2021|#5.0 Setup|
