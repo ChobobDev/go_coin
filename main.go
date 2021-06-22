@@ -2,25 +2,17 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/ChobobDev/go_coin/blockchain"
+	"net/http"
 )
 
-func main() {
-	chain := blockchain.GetBlockchain()
-	chain.AddBlock("Cho Block")
-	chain.AddBlock("Kim Block")
-	chain.AddBlock("Lee Block")
-	chain.AddBlock("Park Block")
-	chain.AddBlock("Chae Block")
-	chain.AddBlock("Lim Block")
-	chain.AddBlock("Ham Block")
-	chain.AddBlock("Oh Block")
+const port string = ":4000"
 
-	for _, block := range chain.AllBlocks() {
-		fmt.Printf("Data : %s \n", block.Data)
-		fmt.Printf("Hash : %s \n", block.Hash)
-		fmt.Printf("Prev Hash : %s \n", block.PrevHash)
-		fmt.Println("")
-	}
+func home(rw http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(rw, "Hello from Home !!!!")
+}
+
+func main() {
+	http.HandleFunc("/", home)
+	fmt.Printf("Litening on http://localhost%s\n", port)
+	http.ListenAndServe(port, nil)
 }

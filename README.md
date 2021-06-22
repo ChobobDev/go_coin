@@ -24,3 +24,8 @@
 |21/06/2021|#4.3 Singleton Pattern|
 |21/06/2021|#4.4 Refactoring part One|
 |22/06/2021|#4.5 Refactoring part Two|
+
+#5 EXPLORER
+|   Date   |  Section  |
+| :------: |:------:|
+|22/06/2021|#5.0 Setup|
