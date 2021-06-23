@@ -31,4 +31,4 @@
 |22/06/2021|#5.0 Setup|
 |22/06/2021|#5.1 Rendering Templates|
 |22/06/2021|#5.2 Rendering Blocks|
-|23/06/2021|#5.3 Using Partials - till 7:16 |
+|23/06/2021|#5.3 Using Partials|
