@@ -32,3 +32,4 @@
 |22/06/2021|#5.1 Rendering Templates|
 |22/06/2021|#5.2 Rendering Blocks|
 |23/06/2021|#5.3 Using Partials|
+|23/06/2021|#5.4 Adding A Block|
