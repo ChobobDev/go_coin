@@ -33,3 +33,4 @@
 |22/06/2021|#5.2 Rendering Blocks|
 |23/06/2021|#5.3 Using Partials|
 |23/06/2021|#5.4 Adding A Block|
+|23/06/2021|#5.5 Refactoring|
