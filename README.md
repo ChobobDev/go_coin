@@ -34,3 +34,9 @@
 |23/06/2021|#5.3 Using Partials|
 |23/06/2021|#5.4 Adding A Block|
 |23/06/2021|#5.5 Refactoring|
+|24/06/2021|#5.6 Recap|
+
+# #6 REST API
+|   Date   |  Section  |
+| :------: |:------:|
+|24/06/2021|#|
