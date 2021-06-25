@@ -1,6 +1,6 @@
 # Learning the blockchain concepts with Go lang
 
-진행과정 
+진행과정 (What I Learnt) 
 
 # #3 TOUR OF GO
 |   Date   |  Section  |
@@ -25,6 +25,7 @@
 |21/06/2021|#4.4 Refactoring part One|
 |22/06/2021|#4.5 Refactoring part Two|
 
+
 # #5 EXPLORER
 |   Date   |  Section  |
 | :------: |:------:|
@@ -35,6 +36,7 @@
 |23/06/2021|#5.4 Adding A Block|
 |23/06/2021|#5.5 Refactoring|
 |24/06/2021|#5.6 Recap|
+
 
 # #6 REST API
 |   Date   |  Section  |
