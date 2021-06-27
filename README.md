@@ -44,3 +44,5 @@
 |24/06/2021|#6.0 Setup|
 |26/06/2021|#6.1 Marshal and Field Tags|
 |26/06/2021|#6.2 MarshalText|
+|27/06/2021|#6.3 JSON Decode|
+
