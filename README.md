@@ -45,4 +45,5 @@
 |26/06/2021|#6.1 Marshal and Field Tags|
 |26/06/2021|#6.2 MarshalText|
 |27/06/2021|#6.3 JSON Decode|
+|27/06/2021|#6.4 NewServeMux|
 
