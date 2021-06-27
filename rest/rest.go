@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/ChobobDev/go_coin/blockchain"
 	"github.com/ChobobDev/go_coin/utils"
@@ -41,12 +42,17 @@ func documentation(rw http.ResponseWriter, r *http.Request) {
 		},
 		{
 			URL:         url("/blocks"),
+			Method:      "GET",
+			Description: "A block",
+		},
+		{
+			URL:         url("/blocks"),
 			Method:      "POST",
 			Description: "A block",
 			Payload:     "data:string",
 		},
 		{
-			URL:         url("/blocks/{id}"),
+			URL:         url("/blocks/{height}"),
 			Method:      "GET",
 			Description: "A block",
 		},
@@ -73,7 +79,10 @@ func blocks(rw http.ResponseWriter, r *http.Request) {
 
 func block(rw http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	id := vars["id"]
+	id, err := strconv.Atoi(vars["height"])
+	utils.HandleErr(err)
+	block := blockchain.GetBlockchain().GetBlock(id)
+	json.NewEncoder(rw).Encode(block)
 
 }
 
@@ -82,7 +91,7 @@ func Start(aPort int) {
 	port = fmt.Sprintf(":%d", aPort)
 	handler.HandleFunc("/", documentation).Methods("GET")
 	handler.HandleFunc("/blocks", blocks).Methods("GET", "POST")
-	handler.HandleFunc("/blocks/{id: [0-9]+}", block).Methods("GET")
+	handler.HandleFunc("/blocks/{height:[0-9]+}", block).Methods("GET")
 	fmt.Printf("Litening on http://localhost%s\n", port)
 	log.Fatal((http.ListenAndServe(port, handler)))
 }
