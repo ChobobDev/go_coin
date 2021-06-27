@@ -48,4 +48,5 @@
 |27/06/2021|#6.4 NewServeMux|
 |27/06/2021|#6.5 Gorilla Mux|
 |27/06/2021|#6.6 Atoi|
+|27/06/2021|#6.7 Error Handling|
 
