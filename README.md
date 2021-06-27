@@ -46,4 +46,6 @@
 |26/06/2021|#6.2 MarshalText|
 |27/06/2021|#6.3 JSON Decode|
 |27/06/2021|#6.4 NewServeMux|
+|27/06/2021|#6.5 Gorilla Mux|
+
 

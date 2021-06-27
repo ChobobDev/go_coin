@@ -8,6 +8,7 @@ import (
 
 	"github.com/ChobobDev/go_coin/blockchain"
 	"github.com/ChobobDev/go_coin/utils"
+	"github.com/gorilla/mux"
 )
 
 var port string
@@ -44,6 +45,11 @@ func documentation(rw http.ResponseWriter, r *http.Request) {
 			Description: "A block",
 			Payload:     "data:string",
 		},
+		{
+			URL:         url("/blocks/{id}"),
+			Method:      "GET",
+			Description: "A block",
+		},
 	}
 	rw.Header().Add("Content-Type", "application/json")
 	json.NewEncoder(rw).Encode(data)
@@ -65,11 +71,18 @@ func blocks(rw http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func block(rw http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["id"]
+
+}
+
 func Start(aPort int) {
-	handler := http.NewServeMux()
+	handler := mux.NewRouter()
 	port = fmt.Sprintf(":%d", aPort)
-	handler.HandleFunc("/", documentation)
-	handler.HandleFunc("/blocks", blocks)
+	handler.HandleFunc("/", documentation).Methods("GET")
+	handler.HandleFunc("/blocks", blocks).Methods("GET", "POST")
+	handler.HandleFunc("/blocks/{id: [0-9]+}", block).Methods("GET")
 	fmt.Printf("Litening on http://localhost%s\n", port)
 	log.Fatal((http.ListenAndServe(port, handler)))
 }
