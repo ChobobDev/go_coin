@@ -94,12 +94,21 @@ func block(rw http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func jsonContentTypeMiddleware(next http.Handler) http.Handler {
+	//HandlerFunc 는 Func 가 아니라 Type 이다
+	return http.HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {
+		rw.Header().Add("Conent-Type", "application/json")
+		next.ServeHTTP(rw, r)
+	})
+}
+
 func Start(aPort int) {
-	handler := mux.NewRouter()
 	port = fmt.Sprintf(":%d", aPort)
-	handler.HandleFunc("/", documentation).Methods("GET")
-	handler.HandleFunc("/blocks", blocks).Methods("GET", "POST")
-	handler.HandleFunc("/blocks/{height:[0-9]+}", block).Methods("GET")
+	router := mux.NewRouter()
+	router.Use(jsonContentTypeMiddleware)
+	router.HandleFunc("/", documentation).Methods("GET")
+	router.HandleFunc("/blocks", blocks).Methods("GET", "POST")
+	router.HandleFunc("/blocks/{height:[0-9]+}", block).Methods("GET")
 	fmt.Printf("Litening on http://localhost%s\n", port)
-	log.Fatal((http.ListenAndServe(port, handler)))
+	log.Fatal((http.ListenAndServe(port, router)))
 }
