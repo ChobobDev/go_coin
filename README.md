@@ -55,3 +55,4 @@
 |   Date   |  Section  |
 | :------: |:------:|
 |28/06/2021|#7.0 Introduction|
+|28/06/2021|#7.1 Parsing Commands|
