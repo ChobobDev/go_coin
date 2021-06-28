@@ -51,3 +51,7 @@
 |27/06/2021|#6.7 Error Handling|
 |28/06/2021|#6.8 Middlewares|
 
+# #7 CLI
+|   Date   |  Section  |
+| :------: |:------:|
+|28/06/2021|#7.0 Introduction|
