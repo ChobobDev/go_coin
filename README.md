@@ -57,3 +57,4 @@
 |28/06/2021|#7.0 Introduction|
 |28/06/2021|#7.1 Parsing Commands|
 |29/06/2021|#7.2 FlagSet|
+|29/06/2021|#7.3 Flag|
