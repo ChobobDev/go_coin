@@ -58,3 +58,8 @@
 |28/06/2021|#7.1 Parsing Commands|
 |29/06/2021|#7.2 FlagSet|
 |29/06/2021|#7.3 Flag|
+
+# #8 PERSISTENCE
+|   Date   |  Section  |
+| :------: |:------:|
+|29/06/2021|#8.0 Introduction to Bolt|
