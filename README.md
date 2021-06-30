@@ -64,3 +64,4 @@
 | :------: |:------:|
 |29/06/2021|#8.0 Introduction to Bolt|
 |30/06/2021|#8.1 Creating the Database|
+|30/06/2021|#8.2 A New Blockchain|
