@@ -1,7 +1,7 @@
 package main
 
-import "github.com/ChobobDev/go_coin/cli"
+import "github.com/ChobobDev/go_coin/blockchain"
 
 func main() {
-	cli.Start()
+	blockchain.Blockchain()
 }
