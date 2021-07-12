@@ -8,8 +8,8 @@ import (
 )
 
 type blockchain struct {
-	NewstHash string `json:"newestHash"`
-	Height    int    `json:"height"`
+	NewestHash string `json:"newestHash"`
+	Height     int    `json:"height"`
 }
 
 var b *blockchain
@@ -20,17 +20,17 @@ func (b *blockchain) persist() {
 }
 
 func (b *blockchain) AddBlock(data string) {
-	block := createBlock(data, b.NewstHash, b.Height)
-	b.NewstHash = block.Hash
+	block := createBlock(data, b.NewestHash, b.Height+1)
+	b.NewestHash = block.Hash
 	b.Height = block.Height
-
+	b.persist()
 }
 
 func Blockchain() *blockchain {
 	if b == nil {
 		once.Do(func() {
 			b = &blockchain{"", 0}
-			b.AddBlock("Jeong Block")
+			b.AddBlock("Bernie the great Gopher block")
 		})
 	}
 	return b
