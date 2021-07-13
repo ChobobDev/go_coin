@@ -2,6 +2,7 @@ package explorer
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"text/template"
 
@@ -20,7 +21,7 @@ type homeData struct {
 }
 
 func home(rw http.ResponseWriter, r *http.Request) {
-	data := homeData{"버니 버니 바니 바니 고랭고랭", blockchain.GetBlockchain().AllBlocks()}
+	data := homeData{"Home", nil}
 	templates.ExecuteTemplate(rw, "home", data)
 }
 
@@ -31,10 +32,9 @@ func add(rw http.ResponseWriter, r *http.Request) {
 	case "POST":
 		r.ParseForm()
 		data := r.Form.Get("blockData")
-		blockchain.GetBlockchain().AddBlock(data)
+		blockchain.Blockchain().AddBlock(data)
 		http.Redirect(rw, r, "/", http.StatusPermanentRedirect)
 	}
-
 }
 
 func Start(port int) {
@@ -43,6 +43,6 @@ func Start(port int) {
 	templates = template.Must(templates.ParseGlob(templateDir + "partials/*.gohtml"))
 	handler.HandleFunc("/", home)
 	handler.HandleFunc("/add", add)
-	fmt.Printf("Litening on http://localhost:%d\n", port)
-	http.ListenAndServe(fmt.Sprintf(":%d", port), handler)
+	fmt.Printf("Listening on http://localhost:%d\n", port)
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", port), handler))
 }

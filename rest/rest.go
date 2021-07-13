@@ -5,10 +5,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"strconv"
 
 	"github.com/ChobobDev/go_coin/blockchain"
-	"github.com/ChobobDev/go_coin/utils"
 	"github.com/gorilla/mux"
 )
 
@@ -19,7 +17,6 @@ type url string
 func (u url) MarshalText() ([]byte, error) {
 	url := fmt.Sprintf("http://localhost%s%s", port, u)
 	return []byte(url), nil
-
 }
 
 type urlDescription struct {
@@ -47,45 +44,41 @@ func documentation(rw http.ResponseWriter, r *http.Request) {
 		{
 			URL:         url("/blocks"),
 			Method:      "GET",
-			Description: "A block",
+			Description: "See All Blocks",
 		},
 		{
 			URL:         url("/blocks"),
 			Method:      "POST",
-			Description: "A block",
+			Description: "Add A Block",
 			Payload:     "data:string",
 		},
 		{
-			URL:         url("/blocks/{height}"),
+			URL:         url("/blocks/{hash}"),
 			Method:      "GET",
-			Description: "A block",
+			Description: "See A Block",
 		},
 	}
-	rw.Header().Add("Content-Type", "application/json")
 	json.NewEncoder(rw).Encode(data)
-
 }
 
 func blocks(rw http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
-		rw.Header().Add("Content-Type", "application/json")
-		json.NewEncoder(rw).Encode(blockchain.GetBlockchain().AllBlocks())
-
+		return
+		// json.NewEncoder(rw).Encode(blockchain.GetBlockchain().AllBlocks())
 	case "POST":
-		var addBlockBody addBlockBody
+		return
+		/* var addBlockBody addBlockBody
 		utils.HandleErr(json.NewDecoder(r.Body).Decode(&addBlockBody))
 		blockchain.GetBlockchain().AddBlock(addBlockBody.Message)
-		rw.WriteHeader(http.StatusCreated)
-
+		rw.WriteHeader(http.StatusCreated) */
 	}
 }
 
 func block(rw http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	id, err := strconv.Atoi(vars["height"])
-	utils.HandleErr(err)
-	block, err := blockchain.GetBlockchain().GetBlock(id)
+	hash := vars["hash"]
+	block, err := blockchain.FindBlock(hash)
 	encoder := json.NewEncoder(rw)
 	if err == blockchain.ErrNotFound {
 		encoder.Encode(errorResponse{fmt.Sprint(err)})
@@ -95,9 +88,8 @@ func block(rw http.ResponseWriter, r *http.Request) {
 }
 
 func jsonContentTypeMiddleware(next http.Handler) http.Handler {
-	//HandlerFunc 는 Func 가 아니라 Type 이다
 	return http.HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {
-		rw.Header().Add("Conent-Type", "application/json")
+		rw.Header().Add("Content-Type", "application/json")
 		next.ServeHTTP(rw, r)
 	})
 }
@@ -108,7 +100,7 @@ func Start(aPort int) {
 	router.Use(jsonContentTypeMiddleware)
 	router.HandleFunc("/", documentation).Methods("GET")
 	router.HandleFunc("/blocks", blocks).Methods("GET", "POST")
-	router.HandleFunc("/blocks/{height:[0-9]+}", block).Methods("GET")
-	fmt.Printf("Litening on http://localhost%s\n", port)
-	log.Fatal((http.ListenAndServe(port, router)))
+	router.HandleFunc("/blocks/{hash:[a-f0-9]+}", block).Methods("GET")
+	fmt.Printf("Listening on http://localhost%s\n", port)
+	log.Fatal(http.ListenAndServe(port, router))
 }
