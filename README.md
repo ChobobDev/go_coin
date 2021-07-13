@@ -68,3 +68,4 @@
 |01/07/2021|#8.3 Saving A Block|
 |12/07/2021|#8.4 Persisting The Blockchain|
 |12/07/2021|#8.5 Restoring the Blockchain|
+|13/07/2021|#8.6 Restoring Block|
