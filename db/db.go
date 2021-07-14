@@ -31,6 +31,11 @@ func DB() *bolt.DB {
 	return db
 }
 
+func Close() {
+	//realease resources & avoid data corruption
+	DB().Close()
+}
+
 func SaveBlock(hash string, data []byte) {
 	err := DB().Update(func(t *bolt.Tx) error {
 		bucket := t.Bucket([]byte(blocksBucket))
