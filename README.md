@@ -70,3 +70,9 @@
 |12/07/2021|#8.5 Restoring the Blockchain|
 |13/07/2021|#8.6 Restoring Block|
 |14/07/2021|#8.7 All Blocks|
+|16/07/2021|#8.8 Recap|
+
+# #9 MINING
+|   Date   |  Section  |
+| :------: |:------:|
+|16/07/2021| |
