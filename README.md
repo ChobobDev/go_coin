@@ -75,4 +75,4 @@
 # #9 MINING
 |   Date   |  Section  |
 | :------: |:------:|
-|16/07/2021| |
+|16/07/2021|#9.0 Introduction to PoW|
