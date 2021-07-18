@@ -77,3 +77,4 @@
 | :------: |:------:|
 |16/07/2021|#9.0 Introduction to PoW|
 |18/07/2021|#9.1 PoW Proof Of Concept|
+|18/07/2021|#9.2 Mine Block|
