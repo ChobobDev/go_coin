@@ -76,3 +76,4 @@
 |   Date   |  Section  |
 | :------: |:------:|
 |16/07/2021|#9.0 Introduction to PoW|
+|18/07/2021|#9.1 PoW Proof Of Concept|
