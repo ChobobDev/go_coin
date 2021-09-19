@@ -86,3 +86,4 @@
 |   Date   |  Section  |
 | :------: |:------:|
 |19/09/2021|#10.0 Introduction|
+|19/09/2021|#10.1 Introduction to Transactions|
