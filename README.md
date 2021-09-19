@@ -79,3 +79,4 @@
 |18/07/2021|#9.1 PoW Proof Of Concept|
 |18/07/2021|#9.2 Mine Block|
 |19/09/2021|#9.3 Difficulty part One|
+|19/09/2021|#9.4 Difficulty part Two|
