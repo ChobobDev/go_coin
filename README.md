@@ -81,3 +81,8 @@
 |19/09/2021|#9.3 Difficulty part One|
 |19/09/2021|#9.4 Difficulty part Two|
 |19/09/2021|#9.5 Conclusions|
+
+# #10 TRANSACTIONS
+|   Date   |  Section  |
+| :------: |:------:|
+|19/09/2021|#10.0 Introduction|
