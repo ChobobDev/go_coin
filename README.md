@@ -5,10 +5,10 @@
 # #3 TOUR OF GO
 |   Date   |  Section  |
 | :------: |:------:|
-|15/06/2021| #3.0 Creating the Project |
-|15/06/2021| #3.1 Variables in Go |
-|16/06/2021| #3.2 Functions |
-|17/06/2021| #3.3 fmt |
+|15/06/2021|#3.0 Creating the Project |
+|15/06/2021|#3.1 Variables in Go |
+|16/06/2021|#3.2 Functions |
+|17/06/2021|#3.3 fmt |
 |17/06/2021|#3.4 Slices and Arrays|
 |17/06/2021|#3.5 Pointers|
 |19/06/2021|#3.6 Structs|
@@ -78,3 +78,4 @@
 |16/07/2021|#9.0 Introduction to PoW|
 |18/07/2021|#9.1 PoW Proof Of Concept|
 |18/07/2021|#9.2 Mine Block|
+|19/09/2021|#9.3 Difficulty part One|
